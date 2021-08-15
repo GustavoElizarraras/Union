@@ -16,6 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from usuarios import views as usuario_view
+from optimizacion import views as optimizacion_view
+from aportes import views as aportes_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    #Usuarios
+    path('users/login/', usuario_view.login_view, name='login'),
+    path('users/logout/', usuario_view.logout_view, name='logout'),
+    path('users/signup/', usuario_view.signup_view, name='signup'),
+
+    #Optimizacion
+    path('', optimizacion_view.home, name='home'),
+    #Aportes
 ]
