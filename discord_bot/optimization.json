@@ -1,0 +1,11 @@
+{
+    "UPIITA": {
+        "Calculo":{"Lunes":[1,4], "Martes":[2,5], "Miercoles":[5,6], "Jueves":[1,4], "Viernes":[2,8]},
+        "Mecanica":{"Lunes":[2,7], "Martes":[1,7], "Miercoles":[1,8], "Jueves":[1,3,4], "Viernes":[1,9]}
+
+    },
+    "ESIME": {
+        "Calculo":{"Lunes":[1,4], "Martes":[3,9], "Miercoles":[5,9], "Jueves":[3,4], "Viernes":[1,8]},
+        "Mecanica":{"Lunes":[5,7], "Martes":[4,6], "Miercoles":[2,9], "Jueves":[1,8], "Viernes":[8,9]}
+    }
+}
