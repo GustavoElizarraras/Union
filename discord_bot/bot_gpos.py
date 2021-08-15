@@ -14,8 +14,13 @@ target_channel_id = 876304013975519255
 async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
+    for server in bot.guilds:
+        print(server)
+        for channel in server.channels:
+            if channel.name == "planificación-de-sesiones":
+                print("Ahora estoy en:", channel)
 
-@tasks.loop(seconds=10.0)
+@tasks.loop(seconds=30.0)
 async def called_every_min():
     message_channel = bot.get_channel(target_channel_id)
     print(message_channel)
@@ -31,7 +36,7 @@ async def before():
 
 @bot.event
 async def on_message(message):
-    if message.author == client.user:
+    if message.author == bot.user:
         return
 
     if message.content.startswith("$mello"):
