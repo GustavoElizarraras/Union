@@ -30,6 +30,8 @@ class nombre_Materia(models.Model):
         return self.nombre
 class Licenciatura(models.Model):
     nombreLicenciatura = models.CharField('Nombre de la licenciatura', max_length=200)
+    def __str__(self):
+        return self.nombreLicenciatura
 
 class Materia(models.Model):
     nombreMateria = models.ForeignKey('nombre_Materia',on_delete=CASCADE)
@@ -37,7 +39,7 @@ class Materia(models.Model):
     horario =models.ForeignKey('Horario', on_delete=CASCADE)
     licenciatura = models.ForeignKey('Licenciatura', on_delete=CASCADE)
     def __str__(self):
-        return 'Materia: {} \n Grupo: {} \n Licenciatura: {} \n'.format(self.nombreMateria, self.grupo, self.lic)
+        return 'Materia: {} \n Grupo: {} \n Licenciatura: {} \n'.format(self.nombreMateria, self.grupo, self.licenciatura)
 
 class Escuela(models.Model):
     nombre = models.CharField('Nombre de la escuela', max_length=200)

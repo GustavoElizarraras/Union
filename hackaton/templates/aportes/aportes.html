@@ -2,8 +2,13 @@
 
 {% block head_content %}
 {%load static%}
-<title></title>
+<title>Aportes</title>
 {% endblock %}
 
 {% block container %}
+
+{% for dato in datos %}
+    {{dato}}<br>
+{% endfor %}
+    
 {% endblock %}

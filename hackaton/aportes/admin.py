@@ -1,5 +1,6 @@
+
 from django.contrib import admin
-from aportes.models import Aporte
+from aportes.models import Aporte , Tag
 # Register your models here.
 
 @admin.register(Aporte)
@@ -13,4 +14,13 @@ class AporteAdmin(admin.ModelAdmin):
         'titulo',
         'link',
         'tags',
+        )
+
+@admin.register(Tag)
+
+class AporteAdmin(admin.ModelAdmin):
+    list_display = ('nombreTag',)
+    list_display_links = ('nombreTag',)
+    search_fields= (
+        'nombreTag',
         )

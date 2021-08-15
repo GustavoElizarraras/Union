@@ -31,4 +31,5 @@ urlpatterns = [
     #Optimizacion
     path('', optimizacion_view.home, name='home'),
     #Aportes
+    path('aportes/',aportes_view.view_aportes,name='aportes' )
 ]

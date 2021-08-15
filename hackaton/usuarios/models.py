@@ -10,7 +10,7 @@ class Alumno(models.Model):
     information.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    materias = models.ForeignKey(Materia, on_delete=CASCADE)
+    materias = models.ManyToManyField(Materia, related_name='materias')
     escuela = models.ForeignKey(Escuela, on_delete=CASCADE)
     licenciatura = models.ForeignKey(Licenciatura, on_delete=CASCADE)
     created = models.DateTimeField(auto_now_add=True)
