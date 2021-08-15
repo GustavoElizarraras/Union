@@ -9,6 +9,7 @@ bot = commands.Bot(command_prefix='!')
 
 
 target_channel_id = 876304013975519255
+channel_name = "planificación-de-sesiones"
 
 @bot.event
 async def on_ready():
@@ -22,10 +23,13 @@ async def on_ready():
 
 @tasks.loop(seconds=30.0)
 async def called_every_min():
-    message_channel = bot.get_channel(target_channel_id)
-    print(message_channel)
-    print(f"Got channel {message_channel}")
-    await message_channel.send("Your message")
+    for server in bot.guilds:
+        print(server)
+        for channel in server.channels:
+            if channel.name == "planificación-de-sesiones":
+                print("Ahora estoy en:", channel)
+                await channel.send("Your message")
+
 
 @called_every_min.before_loop
 async def before():
